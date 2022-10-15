@@ -117,6 +117,10 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 				top: 2rem;
 			}
 		</style>
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"
+		/>
 	</head>
 
 	<body>
@@ -135,5 +139,23 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
 			</aside>
 		</main>
 		<Footer path={currentFile} />
+		<!-- Before the closing </body> -->
+		<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+		<script>
+		  docsearch({
+			// Your Search API Key
+			apiKey: '8c7208173bd16bad8511ea506eb6e1ac',
+			// The index populated by the DocSearch scraper
+			indexName: 'astrodocs',
+			// Your Algolia Application ID
+			appId: 'EABWYAWILF',
+			// Replace inputSelector with a CSS selector
+			// matching your search input
+			inputSelector: 'div#microsearch',
+			// Set debug to true to inspect the dropdown
+			debug: false,
+		  });
+		</script>
+		<div id="microsearch"></div>
 	</body>
 </html>
